@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 // Route 1 : Page d'accueil
 Route::get('/', function () {
     return view('welcome');
@@ -95,3 +95,7 @@ Route::get('/contact1', function () {
 Route::get('/equipe1', function () {
     return view('equipe');
 });
+Route::get('/home', [PageController::class, 'home']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/contact', [PageController::class, 'contact']);
+Route::get('/page/{id}', [PageController::class, 'show']);
